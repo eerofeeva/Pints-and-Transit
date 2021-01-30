@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Mission to Mars</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+
+<body style="background-color:rgb(197, 194, 187);">
+  <nav class="navbar navbar-light bg-light">
+      <form class="container-fluid justify-content-start">
+          <a class="btn btn-sm btn-outline-secondary" href="../scrape" style="margin-left:100px;" role="button">Scrape <br> New Data</a>
+        <span class="navbar-text" style="color:black;margin-left:20px;font-size:50px">
+          Mission to Mars
+        </span>
+      </form>
+  </nav>
+  <br>
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <h1 class="heading" style="font-size:200%;">Latest Mars News</h1>
+        <hr>
+          <h3 >{{mars.news_title}}</h3>
+           <p>{{mars.news_p}}</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+          <h2>Featured Mars Image</h2> 
+        <img src="{{mars.features_image_url}}" alt="Mars Image" style="width:500px;height:500px;">
+      </div>
+      <div class="col">
+            <h3>Mars Trivia</h3>
+            {{ mars.html_table | safe }}
+            <br>
+            <br>
+            <h3>List of Websites:</h3>
+              <ul>
+                <li>
+                  <a href="https://mars.nasa.gov/news/" target="_blank">NASA Mars News Site</a>
+                </li>
+                <li>
+                  <a href="https://www.jpl.nasa.gov/spaceimages/?search=&category=Mars" target="_blank">Jet Propulsion Laboratory</a>
+                </li>
+                <li>
+                  <a href="https://space-facts.com/mars/" target="_blank">Mars Facts</a>
+                </li>
+                <li>
+                  <a href="https://astrogeology.usgs.gov/search/results?q=hemisphere+enhanced&k1=target&v1=Mars" target="_blank">USGS Astrogeology</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    <br>
+        <h2 class="hemispheres" style="text-align: center;"><u>Mars Hemispheres</u></h2>
+          <br>
+          {% for object in mars.hemeispheres %}
+          <div class="card-group">
+            <div class="card" style="margin:10px;">
+              <img class="card-img-top" src="{{ object.img_url | safe }}" alt="{{ object.title | safe }}">
+              <div class="card-body">
+                <h5 class="card-title">{{ object.title | safe }}</h5>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+      </div>
+    </div>
+
+
+
+
+
+  <!-- <div class="row">
+      <div class="col-md-12">
+        <div class="row">
+          <div class="col-md-6">
+            <h1 class="heading" style="font-size:200%;">Latest Mars News</h1>
+              <hr>
+                <h3 >{{mars.news_title}}</h3>
+                 <p>{{mars.news_p}}</p>
+                <h2 style="text-align:center;">Featured Mars Image</h2> 
+              <img src="{{mars.features_image_url}}" alt="Mars Image" style="padding:20px;width:700px;height:700px;">
+          </div>
+        <div class="col-md-3">
+      <div class="row">
+          {{ mars.html_table | safe }}
+      </div>
+      <div class="row">
+        <div class="col-md-8 offset-4">
+          <h2 class="align-items-center"><u>Mars Hemispheres</u></h2>  
+        </div>
+      </div>
+      </br>
+      <div class="row">       
+              {% for object in mars.hemeispheres %} 
+                <div class="col-6">
+                </br>
+                      <div>
+                        <img width="500 px" height="500 px" src="{{ object.img_url | safe }}">
+                      </div>
+  
+                      <div>
+                        <p> {{ object.title | safe }} <p>  
+                      </div>
+              
+                </div>
+              {% endfor %}
+      </div>  -->
+</body>
+
+</html>
