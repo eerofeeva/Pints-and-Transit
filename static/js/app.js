@@ -3,7 +3,7 @@
 // This gets inserted into the div with an id of 'map'
 var myMap = L.map("map", {
     center: MINNEAPOLIS_CENTER_COORDS,
-    zoom: 14
+    zoom: STARTING_ZOOM
   });
   
   // Adding a tile layer (the background map image) to our map
@@ -17,4 +17,9 @@ var myMap = L.map("map", {
     id: "mapbox/streets-v11",
     accessToken: MAPBOX_API_KEY
   }).addTo(myMap);
-  
+
+  //get onsale data
+  d3.json(BREWERY_ONSALE_QUERY_URL).then(function(data) {
+   var onSaleData = data;
+  });
+  //get ofsale data
