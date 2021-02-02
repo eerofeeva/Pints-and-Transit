@@ -23,3 +23,7 @@ var myMap = L.map("map", {
    var onSaleData = data;
   });
   //get ofsale data
+  d3.json(BREWERY_OFFSALE_QUERY_URL).then(function(data) {
+    var offSaleData = data;
+   });
+  //get neighbourhood layer
