@@ -8,7 +8,7 @@ import warnings
 
 warnings.filterwarnings('ignore')
 
-mars_content = {}
+eater_content = {}
 
 def scrape():
 
@@ -93,7 +93,7 @@ def scrape():
 
         browser.visit(url4)
 
-    mars_content = {
+    eater_content = {
         "news_title": title,
         "news_p": news_p,
         "features_image_url": features_image_url,
