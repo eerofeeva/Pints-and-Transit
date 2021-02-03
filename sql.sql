@@ -1,4 +1,4 @@
-DROP TABLE IF EXISTS bikes
+
 
 CREATE TABLE bikes (
     ride_id VARCHAR,
@@ -6,13 +6,13 @@ CREATE TABLE bikes (
     started_at TIMESTAMP,
     ended_at TIMESTAMP,
     start_station_name VARCHAR,
-    start_station_id INTEGER, 
+    start_station_id NUMERIC,
     end_station_name VARCHAR,
-    end_station_id INTEGER,
-    start_lat INTEGER,
-    start_lng INTEGER,
-    end_lat INTEGER,
-    end_lng INTEGER, 
+    end_station_id NUMERIC,
+    start_lat NUMERIC,
+    start_lng NUMERIC,
+    end_lat NUMERIC,
+    end_lng NUMERIC, 
     member_casual VARCHAR,
     PRIMARY KEY (ride_id)
 );
@@ -21,3 +21,5 @@ COPY bikes(ride_id, rideable_type, started_at, ended_at, start_station_name, sta
 FROM 'C:\Users\Kelly\Desktop\Bootcamp\Pints-and-Transit\resources\all_data_2020.csv'
 DELIMITER ','
 CSV HEADER;
+
+select * from bikes
