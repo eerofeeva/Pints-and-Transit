@@ -6,13 +6,13 @@ import warnings
 
 warnings.filterwarnings('ignore')
 
-eater_content = {}
+# eater_content = {}
 
 def scrape():
 
     executable_path = {'executable_path': 'c:/bin/chromedriver'}
     browser = Browser('chrome', **executable_path, headless=False)
-    
+
     ### Eater
     url = 'https://twincities.eater.com/'
 
@@ -23,7 +23,7 @@ def scrape():
     titles = soup.find_all("h2", class_="c-entry-box--compact__title")
 
     matches = ["Beer", "Brewery", "Breweries", "Wine", "Winery", "Wineries", "Growler", "Growlers", "Cocktail", "Cocktails", "Alcohol", "Bike", "Bikes", "Cycle", "Cyclist", "Cyclists", "Alcohol", "Liquor", "Bar", "Bars"]
-    
+
     x = 0
 
     article_titles = []
@@ -38,10 +38,10 @@ def scrape():
             x = x + 1
 
     eater_content = {
-        "article_titles": titles,
+        "article_titles": article_titles,
         "links": links
     }
 
     browser.quit()
 
-    return eater_content
+return eater_content
