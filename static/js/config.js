@@ -17,6 +17,4 @@ EATER='https://twincities.eater.com/'
 
 ABOUT_US_TEXT =''
 
-
-
 //
