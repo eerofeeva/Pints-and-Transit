@@ -1,3 +1,8 @@
+//globals
+var onSaleData;
+var offSaleData;
+var neighbourhoods;
+
 // Creating our initial map object
 // We set the longitude, latitude, and the starting zoom level
 // This gets inserted into the div with an id of 'map'
@@ -5,6 +10,11 @@ var myMap = L.map("map", {
     center: MINNEAPOLIS_CENTER_COORDS,
     zoom: STARTING_ZOOM
   });
+  
+
+  getData();
+
+  // Create Map
   
   // Adding a tile layer (the background map image) to our map
   // We use the addTo method to add objects to our map
@@ -18,12 +28,27 @@ var myMap = L.map("map", {
     accessToken: MAPBOX_API_KEY
   }).addTo(myMap);
 
-  //get onsale data
-  d3.json(BREWERY_ONSALE_QUERY_URL).then(function(data) {
-   var onSaleData = data;
-  });
-  //get ofsale data
-  d3.json(BREWERY_OFFSALE_QUERY_URL).then(function(data) {
-    var offSaleData = data;
-   });
-  //get neighbourhood layer
+  //adding on sale markers
+
+  //adding off sale markers
+
+  
+
+  function getData()
+  {
+    //get onsale data
+    d3.json(BREWERY_ONSALE_QUERY_URL).then(function(data) {
+      onSaleData = data;
+    });
+
+    //get ofsale data
+    d3.json(BREWERY_OFSALE_QUERY_URL).then(function(data) {
+      offSaleData = data;
+    });
+
+    //get neighbourhood layer
+    d3.json(NEIGHBOURHOODS_QUERY_URL).then(function(data){
+      neighbourhoods = data;
+    });
+  }
+
