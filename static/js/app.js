@@ -15,7 +15,7 @@ var myMap = L.map("map", {
   getData();
 
   // Create Map
-  
+
   // Adding a tile layer (the background map image) to our map
   // We use the addTo method to add objects to our map
   //https://api.mapbox.com/styles/v1/mapbox/streets-v11.html?title=true&access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4M29iazA2Z2gycXA4N2pmbDZmangifQ.-g_vE53SD2WrJ6tFX7QHmA#8.07/44.788/-93.333
@@ -39,6 +39,7 @@ var myMap = L.map("map", {
     //get onsale data
     d3.json(BREWERY_ONSALE_QUERY_URL).then(function(data) {
       onSaleData = data;
+      
     });
 
     //get ofsale data

@@ -1,5 +1,4 @@
 
-
 CREATE TABLE bikes (
     ride_id VARCHAR,
     rideable_type VARCHAR,
