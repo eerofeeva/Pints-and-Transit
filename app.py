@@ -12,7 +12,8 @@ mongo = PyMongo(app)
 @app.route("/news")
 def index_scrape():
     eater_content = mongo.db.eater_content.find_one()
-    return render_template("index.html", eater=eater_content)
+    return render_template("index.html", mars=eater_content)
+    #return render_template("index.html", eater=eater_content)
 
 @app.route("/scrape")
 def scrape():

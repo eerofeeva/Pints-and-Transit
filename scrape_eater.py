@@ -44,4 +44,4 @@ def scrape():
 
     browser.quit()
 
-return eater_content
+    return eater_content
