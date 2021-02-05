@@ -6,7 +6,7 @@ import warnings
 
 warnings.filterwarnings('ignore')
 
-# eater_content = {}
+eater_content = {}
 
 def scrape():
 
@@ -25,21 +25,23 @@ def scrape():
     matches = ["Beer", "Brewery", "Breweries", "Wine", "Winery", "Wineries", "Growler", "Growlers", "Cocktail", "Cocktails", "Alcohol", "Bike", "Bikes", "Cycle", "Cyclist", "Cyclists", "Alcohol", "Liquor", "Bar", "Bars"]
 
     x = 0
-
-    article_titles = []
-    links = []
+    dict_articles = []
 
     for _ in titles:
         if any(y in titles[x].string for y in matches) == True:
-            article_titles.append(titles[x].string)
-            links.append(titles[x].find('a').get('href'))
+            eater_article = titles[x].string
+            dict = {"title": eater_article}
+        
+            link = titles[x].find('a').get('href')
+            dict.update({"link": link})
+
+            dict_articles.append(dict)
             x = x + 1
         else:
             x = x + 1
 
     eater_content = {
-        "article_titles": article_titles,
-        "links": links
+        "articles": dict_articles
     }
 
     browser.quit()
