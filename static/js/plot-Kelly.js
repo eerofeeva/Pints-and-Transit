@@ -45,7 +45,7 @@ d3.csv("../../resources/top_10.csv").then(function(stations) {
 
   stations.forEach(function(data) {
     // data.Ride_count =+ data.Ride_count;
-    console.log(data.start_station_name)
+    console.log(data.Ride_count)
   });
 
   var barSpacing = 10; // desired space between each bar

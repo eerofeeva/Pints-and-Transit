@@ -20,7 +20,7 @@ body {
   background-size: cover;
 
   .bar {
-    fill: orange;
+    fill: rgb(53, 51, 48);
   }
   
   .bar:hover {
