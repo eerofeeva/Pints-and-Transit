@@ -7,10 +7,9 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Pints & Bikes</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <link rel="stylesheet" href="iziModal.min.css">
+  <link rel="stylesheet" href="../static/css/iziModal.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/izimodal/1.5.1/js/iziModal.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 </head>
 
@@ -61,17 +60,20 @@
             </li>
             {% endfor %}
           </ul>
-          <!-- Modal structure -->
-          <a href="" data-izimodal-open="#modal-vimeo">Vimeo</a>
-          <a href="" data-izimodal-open="#modal-youtube">Youtube</a>
-          
-          
-          <div id="modal-vimeo" class="modais" data-izimodal-transitionin="fadeInUp" data-izimodal-title="Vimeo" data-izimodal-iframeURL="https://player.vimeo.com/video/22439234?autoplay=1"></div>
-          <div id="modal-youtube" class="modais" data-izimodal-autoopen data-izimodal-transitionin="fadeInDown" data-izimodal-title="Youtube" data-izimodal-iframeURL="https://www.youtube.com/embed/1G4isv_Fylg?autoplay=1"></div>
+          <h1 class="font-weight-light">Nice Ride</h1>
+          <hr>
+          <ul>
+            <li>
+              <a href="" class="trigger">Youtube - How to Nice Ride</a>
+              <div id="modal-youtube" class="modal-video" data-izimodal-autoopen data-izimodal-transitionin="fadeInDown" data-izimodal-title="How to Nice Ride - Youtube Video" data-izimodal-iframeURL="https://www.youtube.com/embed/v=nrkX7zzc_zo?autoplay=1"></div>
+            </li>
+            <li>
+              <a href="https://www.niceridemn.com/explore" target="_blank">Explore the Minneapoolis Area on Two Wheels</a>
+            </li>
       </div>
     </div>
   </div>
-  <script src="iziModal.min.js" type="text/javascript"></script>
+  <script src="../static/js/iziModal.min.js" type="text/javascript"></script>
 </body>
 
 </html>

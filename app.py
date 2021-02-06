@@ -15,12 +15,12 @@ def index_scrape():
     eater_content = mongo.db.eater_content.find_one()
     return render_template("index.html", eater=eater_content)
 
-# @app.route("/scrape")
-# def scrape():
-#     eater_content = mongo.db.eater_content
-#     eater_info = scrape_eater.scrape()
-#     eater_content.update({}, eater_info, upsert=True)
-#     return redirect("/", code=302)
+@app.route("/scrape")
+def scrape():
+    eater_content = mongo.db.eater_content
+    eater_info = scrape_eater.scrape()
+    eater_content.update({}, eater_info, upsert=True)
+    return redirect("/", code=302)
 
 @app.route("/")
 def index():
