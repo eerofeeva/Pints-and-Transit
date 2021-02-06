@@ -19,8 +19,8 @@ var svg = d3.select("body")
   var chartGroup = svg.append("g")
   .attr("transform", `translate(${chartMargin.left}, ${chartMargin.top})`);
 
-d3.csv("/resources/top_10.csv").then(function(stations) {
-//   // Print the stations data
+d3.csv("/resources/top_50.csv").then(function(stations) {
+// Print the stations data
   console.log(stations);
 
   stations.forEach(function(d) {
@@ -45,7 +45,13 @@ chartGroup.append("g")
 
 chartGroup.append("g")
 .attr("transform", `translate(0, ${chartHeight})`)
-.call(bottomAxis);
+.call(bottomAxis).selectAll("text")	
+.style("text-anchor", "end")
+.attr("dx", "-.8em")
+.attr("dy", ".15em")
+.attr("transform", function(d) {
+    return "rotate(-90)" 
+    });
 
 chartGroup.selectAll(".bar")
     .data(stations)
@@ -55,7 +61,10 @@ chartGroup.selectAll(".bar")
     .attr("x", d => xBandScale(d.start_station_name))
     .attr("y", d => yLinearScale(d.Ride_count))
     .attr("width", xBandScale.bandwidth())
-    .attr("height", d => chartHeight - yLinearScale(d.Ride_count));
+    .attr("height", d => chartHeight - yLinearScale(d.Ride_count))
+    .on("click", function(d, i) {
+      alert(`Bike Station ${d.start_station_name}`);
+    })
 
   }).catch(function(error) {
   console.log(error);
