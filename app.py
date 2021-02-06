@@ -28,9 +28,19 @@ def index():
     return send_file("static/index.html")  
 
 @app.route("/resources/top_50.json")  
-def top_50():
-    print("in resources route")
+def top_50_json():
+    print("in json resources route")
     return send_file("resources/top_50.json")
+
+@app.route("/resources/top_50.csv")  
+def top_50_csv():
+    print("in csv resources route")
+    return send_file("resources/top_50.csv")
+
+@app.route("/resources/top_10.csv")  
+def top_10_csv():
+    print("in csv resources route")
+    return send_file("resources/top_10.csv")    
 
 #@app.route("/plot")
 #def plot():
