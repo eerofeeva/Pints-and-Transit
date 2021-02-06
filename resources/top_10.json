@@ -1,0 +1,60 @@
+{
+    "schema": {
+        "fields": [
+            {
+                "name": "start_station_name",
+                "type": "string"
+            },
+            {
+                "name": "Ride_count",
+                "type": "integer"
+            }
+        ],
+        "primaryKey": [
+            "start_station_name"
+        ],
+        "pandas_version": "0.20.0"
+    },
+    "data": [
+        {
+            "start_station_name": "Lake Calhoun Center",
+            "Ride_count": 3821
+        },
+        {
+            "start_station_name": "6th Ave SE & University Ave",
+            "Ride_count": 3483
+        },
+        {
+            "start_station_name": "W 36th Street & W Calhoun Parkway",
+            "Ride_count": 2419
+        },
+        {
+            "start_station_name": "11th Ave S & S 2nd Street",
+            "Ride_count": 2355
+        },
+        {
+            "start_station_name": "15th Ave SE & SE 4th Street",
+            "Ride_count": 2346
+        },
+        {
+            "start_station_name": "Chicago Ave & S Washington Ave",
+            "Ride_count": 2280
+        },
+        {
+            "start_station_name": "Lake Harriet Bandshell",
+            "Ride_count": 1975
+        },
+        {
+            "start_station_name": "Nicollet Mall & 10th Street",
+            "Ride_count": 1973
+        },
+        {
+            "start_station_name": "Gateway Park",
+            "Ride_count": 1870
+        },
+        {
+            "start_station_name": "Washington & Cedar",
+            "Ride_count": 1775
+        }
+    ]
+}

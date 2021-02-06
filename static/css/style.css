@@ -18,3 +18,11 @@ body {
   background-size: cover;
   background-size: cover;
   background-size: cover;
+
+  .bar {
+    fill: orange;
+  }
+  
+  .bar:hover {
+    fill: green;
+  } 
