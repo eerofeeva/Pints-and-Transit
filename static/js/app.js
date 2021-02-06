@@ -32,6 +32,15 @@ var myMap = L.map("map", {
 
   //adding off sale markers
 
+  //bike station markers
+// Loop through the top_50 array and create one marker for each station
+// and then add it to the map using the addTo method
+var marker = L.marker([45.52, -122.67], {
+  draggable: true,
+  title: "My First Marker"
+}).addTo(myMap);
+
+
   
 
   function getData()

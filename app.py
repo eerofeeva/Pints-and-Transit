@@ -2,6 +2,8 @@ from flask import Flask, render_template, redirect, send_file
 from flask_pymongo import PyMongo
 import requests
 import scrape_eater
+import pandas as pd
+
 
 app = Flask(__name__)
 
@@ -24,7 +26,18 @@ def scrape():
 
 @app.route("/")
 def index():
-    return send_file("static\index.html")   
+    return send_file("static/index.html")  
+    
+# @app.route("/plot")
+def plot():
+    bike_data = pd.read_csv("resources/all_data_2020.csv", encoding="utf-8")
+    #find ride occurances of stations - Pandas HW getting occurances by type 
+    #pandas method to json
+
+    print(bike_data)
+    # return final_data
+plot()    
+
 
 if __name__ == "__main__":
     app.run(debug=True)

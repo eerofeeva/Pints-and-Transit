@@ -1,0 +1,220 @@
+{
+    "schema": {
+        "fields": [
+            {
+                "name": "start_station_name",
+                "type": "string"
+            },
+            {
+                "name": "Ride_count",
+                "type": "integer"
+            }
+        ],
+        "primaryKey": [
+            "start_station_name"
+        ],
+        "pandas_version": "0.20.0"
+    },
+    "data": [
+        {
+            "start_station_name": "Lake Calhoun Center",
+            "Ride_count": 3821
+        },
+        {
+            "start_station_name": "6th Ave SE & University Ave",
+            "Ride_count": 3483
+        },
+        {
+            "start_station_name": "W 36th Street & W Calhoun Parkway",
+            "Ride_count": 2419
+        },
+        {
+            "start_station_name": "11th Ave S & S 2nd Street",
+            "Ride_count": 2355
+        },
+        {
+            "start_station_name": "15th Ave SE & SE 4th Street",
+            "Ride_count": 2346
+        },
+        {
+            "start_station_name": "Chicago Ave & S Washington Ave",
+            "Ride_count": 2280
+        },
+        {
+            "start_station_name": "Lake Harriet Bandshell",
+            "Ride_count": 1975
+        },
+        {
+            "start_station_name": "Nicollet Mall & 10th Street",
+            "Ride_count": 1973
+        },
+        {
+            "start_station_name": "Gateway Park",
+            "Ride_count": 1870
+        },
+        {
+            "start_station_name": "Washington & Cedar",
+            "Ride_count": 1775
+        },
+        {
+            "start_station_name": "Hiawatha Ave & E 50th Street",
+            "Ride_count": 1756
+        },
+        {
+            "start_station_name": "Lake Nokomis",
+            "Ride_count": 1738
+        },
+        {
+            "start_station_name": "S 5th Street & Nicollet Mall",
+            "Ride_count": 1735
+        },
+        {
+            "start_station_name": "West 15th Street & Willow",
+            "Ride_count": 1734
+        },
+        {
+            "start_station_name": "University & Bank Street SE",
+            "Ride_count": 1632
+        },
+        {
+            "start_station_name": "Washington Ave SE & Union Street SE",
+            "Ride_count": 1604
+        },
+        {
+            "start_station_name": "30th Ave SE & SE 4th Street",
+            "Ride_count": 1518
+        },
+        {
+            "start_station_name": "Lake Street & Humboldt",
+            "Ride_count": 1498
+        },
+        {
+            "start_station_name": "Boom Island Park",
+            "Ride_count": 1452
+        },
+        {
+            "start_station_name": "Lake of the Isles Park",
+            "Ride_count": 1390
+        },
+        {
+            "start_station_name": "Mill City Quarter",
+            "Ride_count": 1387
+        },
+        {
+            "start_station_name": "Nicollet & Franklin",
+            "Ride_count": 1377
+        },
+        {
+            "start_station_name": "Delaware Street SE & 26th Ave SE",
+            "Ride_count": 1374
+        },
+        {
+            "start_station_name": "YWCA Downtown",
+            "Ride_count": 1343
+        },
+        {
+            "start_station_name": "McNamara Center",
+            "Ride_count": 1334
+        },
+        {
+            "start_station_name": "Lyndale Ave S & 22nd Street ",
+            "Ride_count": 1330
+        },
+        {
+            "start_station_name": "South 2nd Street & 3rd Ave S",
+            "Ride_count": 1300
+        },
+        {
+            "start_station_name": "Coffman Union",
+            "Ride_count": 1284
+        },
+        {
+            "start_station_name": "Nicollet Island",
+            "Ride_count": 1277
+        },
+        {
+            "start_station_name": "N 4th Ave & W River Parkway",
+            "Ride_count": 1266
+        },
+        {
+            "start_station_name": "15th Ave SE & Como Ave SE",
+            "Ride_count": 1256
+        },
+        {
+            "start_station_name": "W Lake of the Isles Pkwy & W 21st Street",
+            "Ride_count": 1254
+        },
+        {
+            "start_station_name": "Dupont Ave S & W 29th Street",
+            "Ride_count": 1231
+        },
+        {
+            "start_station_name": "26th Street & Lyndale",
+            "Ride_count": 1221
+        },
+        {
+            "start_station_name": "Portland Ave & Washington Ave",
+            "Ride_count": 1216
+        },
+        {
+            "start_station_name": "Walker Art Center",
+            "Ride_count": 1173
+        },
+        {
+            "start_station_name": "SE 7th Street & 10th Ave SE",
+            "Ride_count": 1123
+        },
+        {
+            "start_station_name": "Hennepin & Laurel Ave",
+            "Ride_count": 1120
+        },
+        {
+            "start_station_name": "Hennepin County Government Center",
+            "Ride_count": 1082
+        },
+        {
+            "start_station_name": "5th Ave S & S 8th Street",
+            "Ride_count": 1079
+        },
+        {
+            "start_station_name": "Grant Street & Portland Ave",
+            "Ride_count": 1073
+        },
+        {
+            "start_station_name": "Lyndale Ave S & W 29th Street",
+            "Ride_count": 1072
+        },
+        {
+            "start_station_name": "2nd Ave N & Washington Ave N",
+            "Ride_count": 1064
+        },
+        {
+            "start_station_name": "26th Street & Hennepin",
+            "Ride_count": 1062
+        },
+        {
+            "start_station_name": "Dupont Ave S & 22nd Street",
+            "Ride_count": 1033
+        },
+        {
+            "start_station_name": "Park Ave & 4th Street S",
+            "Ride_count": 1022
+        },
+        {
+            "start_station_name": "Sanford Hall",
+            "Ride_count": 1008
+        },
+        {
+            "start_station_name": "Como Ave SE & 29th Ave SE",
+            "Ride_count": 1002
+        },
+        {
+            "start_station_name": "N Washington Ave & 9th Ave N",
+            "Ride_count": 998
+        },
+        {
+            "start_station_name": "Lake Street & West River Parkway",
+            "Ride_count": 995
+        }
+    ]
+}
