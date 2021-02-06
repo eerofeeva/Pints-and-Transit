@@ -18,3 +18,11 @@ body {
   background-size: cover;
   background-size: cover;
   background-size: cover;
+
+  .bar {
+    fill: rgb(53, 51, 48);
+  }
+  
+  .bar:hover {
+    fill: green;
+  } 
