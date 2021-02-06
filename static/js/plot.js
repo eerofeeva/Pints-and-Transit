@@ -2,9 +2,9 @@ var svgWidth = 1440;
 var svgHeight = 660;
 
 var chartMargin = {
-  top: 10,
+  top: 100,
   right: 10,
-  bottom: 40,
+  bottom: 200,
   left: 40
 };
 
@@ -53,6 +53,8 @@ chartGroup.append("g")
     return "rotate(-90)" 
     });
 
+
+
 chartGroup.selectAll(".bar")
     .data(stations)
     .enter()
@@ -65,6 +67,15 @@ chartGroup.selectAll(".bar")
     .on("click", function(d, i) {
       alert(`Bike Station ${d.start_station_name}`);
     })
+
+chartGroup.append("text")
+.attr("x", (chartWidth / 2))             
+.attr("y", 0 - (chartMargin.top / 2))
+.attr("text-anchor", "middle")  
+.style("font-size", "25px") 
+.style("text-decoration", "underline")  
+.text("50 Busiest Bike Stations: Click to See Station Name");
+
 
   }).catch(function(error) {
   console.log(error);
