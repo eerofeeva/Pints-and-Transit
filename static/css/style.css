@@ -1,20 +1,18 @@
 /* set map, body, and html to 100% of the screen size */
 #map,
-body,
+#plot,
 html {
   height: 100%;
 }
-#plot,
-body,
-html
-{
-  height: 100%;
-}
+
 body {
+  height: 100%;
   background-image: linear-gradient(
     45deg
     ,navy,darkgreen,coral,orange,beige,transparent);
-    }
+  padding: 0;
+  margin: 0;  
+  }
   background-size: cover;
   background-size: cover;
   background-size: cover;
