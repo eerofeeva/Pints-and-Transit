@@ -11,7 +11,7 @@ A website with 3 pages was designed and implemented to include:
   2. Map page
   3. Graph page
 
-A web scrape program was written to scrape the top current articles from Eater and display on our web page. We also used izimodal to create a pop-up window which plays a video.
+A web scrape program was written to scrape the top current articles from Eater and display on our web page, using a Flask server and MongoDB. We also used izimodal to create a pop-up window which plays a video.
 
 The niceride csv data was cleaned and organized, and eventually loaded into Postgres for further analysis on station location. Psycop2 was used to integrate the data 
 to the map. The resulting data for 2020 was used to generate a bar graph depicting the busiest 50 bike stations.
