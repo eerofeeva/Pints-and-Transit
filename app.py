@@ -1,8 +1,10 @@
 from flask import Flask, render_template, redirect, send_file
 from flask_pymongo import PyMongo
+import json
 import requests
 import scrape_eater
-#import pandas as pd
+import psycopg2
+from data_loading.config import config
 
 app = Flask(__name__)
 
@@ -40,18 +42,28 @@ def top_50_csv():
 @app.route("/resources/top_10.csv")  
 def top_10_csv():
     print("in csv resources route")
-    return send_file("resources/top_10.csv")    
+    return send_file("resources/top_10.csv")  
 
-#@app.route("/plot")
-#def plot():
-    #bike_data = pd.read_csv("resources/all_data_2020.csv", encoding="utf-8")
-    #find ride occurances of stations - Pandas HW getting occurances by type 
-    #pandas method to json
-
-    #print(bike_data)
-    # return final_data
-#plot()    
-
+@app.route("/resources/heatmap")   
+def heatmap():
+    params = config('data_loading/database.ini', 'postgresql')
+    con = psycopg2.connect(**params)
+    cur = con.cursor()
+    get_heatmap = config(config_db = 'data_loading/database.ini', section_to_parse = 'get_heatmap')
+    cur.execute(get_heatmap["get_heatmap"])
+    h_table = cur.fetchall()
+    #print(h_table)
+    #return json.dumps(h_table, cls=DecEncoder)
+    return json.dumps([
+        {
+            'id': int(h[0]),
+            'name': str(h[1]),
+            'lat': float(h[2]),
+            'lng': float(h[3]),
+            'nearby': int(h[4]),
+            'total_rides': int(h[5])
+        } for h in h_table
+    ])
 
 if __name__ == "__main__":
     app.run(debug=True)
