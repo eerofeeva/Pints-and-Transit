@@ -1,7 +1,6 @@
 //globals
 var onSaleData;
 var offSaleData;
-var neighbourhoods;
 
 // Creating our initial map object
 // We set the longitude, latitude, and the starting zoom level
@@ -10,6 +9,11 @@ var myMap = L.map("map", {
     center: MINNEAPOLIS_CENTER_COORDS,
     zoom: STARTING_ZOOM
   });
+
+ //create layers
+ var ofSaleLayer = L.layerGroup();
+ var onSaleLayer = L.layerGroup();
+ var heatmapLayer = L.layerGroup(); 
 
   // Adding a tile layer (the background map image) to our map
   L.tileLayer("https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}", {
@@ -36,17 +40,40 @@ var myMap = L.map("map", {
                   parseFloat(feature.lng), intensity*feature.total_rides/feature.nearby];
               });
           };
-    L.heatLayer(json2heat(d,.01)).addTo(myMap);
+    L.heatLayer(json2heat(d,.01)).addTo(heatmapLayer);
   });
-
+  
   //adding on sale markers
-
+  var onSaleMarkers = d3.json(BREWERY_ONSALE_QUERY_URL).then(function(response){
+    for (var i = 0; i < response.features.length; i++) {
+      L.circle([response.features[i].attributes.lat, response.features[i].attributes.long],{
+        fillOpacity: 0.75,
+        color: "white",
+        fillColor: "purple",
+        radius: 50
+      }
+      ).bindPopup("<p>" + response.features[i].attributes.licenseName + "</p>")
+      .addTo(onSaleLayer);
+    }
+  }); 
+ 
   //adding off sale markers
-
-  //bike station markers
-// Loop through the top_50 array and create one marker for each station
-// and then add it to the map using the addTo method
-// var marker = L.marker([45.52, -122.67], {
-//   draggable: true,
-//   title: "My First Marker"
-// }).addTo(myMap);
+  var ofSaleMarkers= d3.json(BREWERY_OFSALE_QUERY_URL).then(function(response){
+    for (var i = 0; i < response.features.length; i++) {
+      L.circle([response.features[i].attributes.lat, response.features[i].attributes.long],{
+        fillOpacity: 0.75,
+        color: "white",
+        fillColor: "green",
+        radius: 50
+      }
+      ).bindPopup("<p>" + response.features[i].attributes.licenseName + "</p>")
+      .addTo(ofSaleLayer);
+    }
+  }); 
+ 
+  var overlayMaps = {
+      "bars, restaurants, brewpubs": onSaleLayer,
+      "liquor stores and off-sale": ofSaleLayer,
+      "where are the thirsty bikers?":heatmapLayer
+    };
+  L.control.layers({},overlayMaps).addTo(myMap);
