@@ -1,6 +1,8 @@
 #Pints and Transit
 
-For Project 3 our group has chosen to explore the niceride bike system and locations of breweries around the Twin Cities, as well as interesting articles 
+See image folder for screenshots of the project in action.
+
+For Project 2 our group has chosen to explore the niceride bike system and locations of breweries around the Twin Cities, as well as interesting articles 
 pertaining to the bar and restaurant scene from Eater, with an aim of gathering the information 
 of where could one open the next microbrewery or gastropub to quench the post-covid thirst of
 the growing Twin Cities biking community.
@@ -12,7 +14,7 @@ source: https://s3.amazonaws.com/niceride-data/index.html. We also used data fro
   2.On sale Liquor license: https://opendata.minneapolismn.gov/datasets/on-sale-liquor 
 
 A website with 3 pages was designed and implemented to include:
-  1. About  
+  1. Home 
   2. Graph 
   3. Map 
   4. News 
