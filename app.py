@@ -65,27 +65,5 @@ def heatmap():
         } for h in h_table
     ])
 
-# @app.route("/resources/onSale")   
-# def heatmap():
-#     params = config('data_loading/database.ini', 'postgresql')
-#     con = psycopg2.connect(**params)
-#     cur = con.cursor()
-#     get_heatmap = config(config_db = 'data_loading/database.ini', section_to_parse = 'get_heatmap')
-#     cur.execute(get_heatmap["get_heatmap"])
-#     h_table = cur.fetchall()
-#     #print(h_table)
-#     #return json.dumps(h_table, cls=DecEncoder)
-#     return json.dumps([
-#         {
-#             'id': int(h[0]),
-#             'name': str(h[1]),
-#             'lat': float(h[2]),
-#             'lng': float(h[3]),
-#             'nearby': int(h[4]),
-#             'total_rides': int(h[5])
-#         } for h in h_table
-#     ])
-
-
 if __name__ == "__main__":
     app.run(debug=True)
