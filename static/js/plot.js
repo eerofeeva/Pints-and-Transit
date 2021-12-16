@@ -20,8 +20,8 @@ var svg = d3.select("body")
   .attr("transform", `translate(${chartMargin.left}, ${chartMargin.top})`);
 
 d3.csv("/resources/top_50.csv").then(function(stations) {
-// Print the stations data
-  console.log(stations);
+// Print the stations data for debugging
+//  console.log(stations);
 
   stations.forEach(function(d) {
     d.Ride_count = +d.Ride_count;
