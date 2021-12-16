@@ -1,14 +1,10 @@
 from flask import Flask, render_template, redirect, send_file
-from flask_pymongo import PyMongo
 import csv
 import json
-from data_loading.config import config
 
 app = Flask(__name__)
 
 # Use flask_pymongo to set up mongo connection
-app.config["MONGO_URI"] = "mongodb://localhost:27017/eater_app"
-mongo = PyMongo(app)
 
 @app.route("/")
 def index():
